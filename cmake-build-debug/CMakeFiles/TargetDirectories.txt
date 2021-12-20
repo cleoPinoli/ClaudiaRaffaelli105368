@@ -1,0 +1,3 @@
+C:/Users/lenovo/Documents/GitHub/LABSO2021/cmake-build-debug/CMakeFiles/LABSO2021.dir
+C:/Users/lenovo/Documents/GitHub/LABSO2021/cmake-build-debug/CMakeFiles/edit_cache.dir
+C:/Users/lenovo/Documents/GitHub/LABSO2021/cmake-build-debug/CMakeFiles/rebuild_cache.dir

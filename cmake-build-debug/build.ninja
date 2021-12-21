@@ -11,7 +11,7 @@
 # =============================================================================
 
 # =============================================================================
-# Project: LABSO2021
+# Project: ClaudiaRaffaelli105368
 # Configurations: Debug
 # =============================================================================
 
@@ -39,52 +39,46 @@ include CMakeFiles/rules.ninja
 #############################################
 # Logical path to working directory; prefix for absolute paths.
 
-cmake_ninja_workdir = C$:/Users/lenovo/Documents/GitHub/LABSO2021/cmake-build-debug/
+cmake_ninja_workdir = C$:/Users/lenovo/Documents/GitHub/ClaudiaRaffaelli105368/cmake-build-debug/
 # =============================================================================
-# Object build statements for EXECUTABLE target LABSO2021
+# Object build statements for EXECUTABLE target ClaudiaRaffaelli105368
 
 
 #############################################
-# Order-only phony target for LABSO2021
+# Order-only phony target for ClaudiaRaffaelli105368
 
-build cmake_object_order_depends_target_LABSO2021: phony || CMakeFiles/LABSO2021.dir
+build cmake_object_order_depends_target_ClaudiaRaffaelli105368: phony || CMakeFiles/ClaudiaRaffaelli105368.dir
 
-build CMakeFiles/LABSO2021.dir/main.c.obj: C_COMPILER__LABSO2021_Debug C$:/Users/lenovo/Documents/GitHub/LABSO2021/main.c || cmake_object_order_depends_target_LABSO2021
-  DEP_FILE = CMakeFiles\LABSO2021.dir\main.c.obj.d
+build CMakeFiles/ClaudiaRaffaelli105368.dir/main.c.obj: C_COMPILER__ClaudiaRaffaelli105368_Debug C$:/Users/lenovo/Documents/GitHub/ClaudiaRaffaelli105368/main.c || cmake_object_order_depends_target_ClaudiaRaffaelli105368
+  DEP_FILE = CMakeFiles\ClaudiaRaffaelli105368.dir\main.c.obj.d
   FLAGS = -g -std=gnu11
-  OBJECT_DIR = CMakeFiles\LABSO2021.dir
-  OBJECT_FILE_DIR = CMakeFiles\LABSO2021.dir
-
-build CMakeFiles/LABSO2021.dir/loncomsubs.c.obj: C_COMPILER__LABSO2021_Debug C$:/Users/lenovo/Documents/GitHub/LABSO2021/loncomsubs.c || cmake_object_order_depends_target_LABSO2021
-  DEP_FILE = CMakeFiles\LABSO2021.dir\loncomsubs.c.obj.d
-  FLAGS = -g -std=gnu11
-  OBJECT_DIR = CMakeFiles\LABSO2021.dir
-  OBJECT_FILE_DIR = CMakeFiles\LABSO2021.dir
+  OBJECT_DIR = CMakeFiles\ClaudiaRaffaelli105368.dir
+  OBJECT_FILE_DIR = CMakeFiles\ClaudiaRaffaelli105368.dir
 
 
 # =============================================================================
-# Link build statements for EXECUTABLE target LABSO2021
+# Link build statements for EXECUTABLE target ClaudiaRaffaelli105368
 
 
 #############################################
-# Link the executable LABSO2021.exe
+# Link the executable ClaudiaRaffaelli105368.exe
 
-build LABSO2021.exe: C_EXECUTABLE_LINKER__LABSO2021_Debug CMakeFiles/LABSO2021.dir/main.c.obj CMakeFiles/LABSO2021.dir/loncomsubs.c.obj
+build ClaudiaRaffaelli105368.exe: C_EXECUTABLE_LINKER__ClaudiaRaffaelli105368_Debug CMakeFiles/ClaudiaRaffaelli105368.dir/main.c.obj
   FLAGS = -g
   LINK_LIBRARIES = -lkernel32 -luser32 -lgdi32 -lwinspool -lshell32 -lole32 -loleaut32 -luuid -lcomdlg32 -ladvapi32
-  OBJECT_DIR = CMakeFiles\LABSO2021.dir
+  OBJECT_DIR = CMakeFiles\ClaudiaRaffaelli105368.dir
   POST_BUILD = cd .
   PRE_LINK = cd .
-  TARGET_FILE = LABSO2021.exe
-  TARGET_IMPLIB = libLABSO2021.dll.a
-  TARGET_PDB = LABSO2021.exe.dbg
+  TARGET_FILE = ClaudiaRaffaelli105368.exe
+  TARGET_IMPLIB = libClaudiaRaffaelli105368.dll.a
+  TARGET_PDB = ClaudiaRaffaelli105368.exe.dbg
 
 
 #############################################
 # Utility command for edit_cache
 
 build CMakeFiles/edit_cache.util: CUSTOM_COMMAND
-  COMMAND = cmd.exe /C "cd /D C:\Users\lenovo\Documents\GitHub\LABSO2021\cmake-build-debug && "C:\Program Files\JetBrains\CLion 2021.3\bin\cmake\win\bin\cmake.exe" -E echo "No interactive CMake dialog available.""
+  COMMAND = cmd.exe /C "cd /D C:\Users\lenovo\Documents\GitHub\ClaudiaRaffaelli105368\cmake-build-debug && "C:\Program Files\JetBrains\CLion 2021.3\bin\cmake\win\bin\cmake.exe" -E echo "No interactive CMake dialog available.""
   DESC = No interactive CMake dialog available...
   restat = 1
 
@@ -95,7 +89,7 @@ build edit_cache: phony CMakeFiles/edit_cache.util
 # Utility command for rebuild_cache
 
 build CMakeFiles/rebuild_cache.util: CUSTOM_COMMAND
-  COMMAND = cmd.exe /C "cd /D C:\Users\lenovo\Documents\GitHub\LABSO2021\cmake-build-debug && "C:\Program Files\JetBrains\CLion 2021.3\bin\cmake\win\bin\cmake.exe" --regenerate-during-build -SC:\Users\lenovo\Documents\GitHub\LABSO2021 -BC:\Users\lenovo\Documents\GitHub\LABSO2021\cmake-build-debug"
+  COMMAND = cmd.exe /C "cd /D C:\Users\lenovo\Documents\GitHub\ClaudiaRaffaelli105368\cmake-build-debug && "C:\Program Files\JetBrains\CLion 2021.3\bin\cmake\win\bin\cmake.exe" --regenerate-during-build -SC:\Users\lenovo\Documents\GitHub\ClaudiaRaffaelli105368 -BC:\Users\lenovo\Documents\GitHub\ClaudiaRaffaelli105368\cmake-build-debug"
   DESC = Running CMake to regenerate build system...
   pool = console
   restat = 1
@@ -105,7 +99,7 @@ build rebuild_cache: phony CMakeFiles/rebuild_cache.util
 # =============================================================================
 # Target aliases.
 
-build LABSO2021: phony LABSO2021.exe
+build ClaudiaRaffaelli105368: phony ClaudiaRaffaelli105368.exe
 
 # =============================================================================
 # Folder targets.
@@ -113,9 +107,9 @@ build LABSO2021: phony LABSO2021.exe
 # =============================================================================
 
 #############################################
-# Folder: C:/Users/lenovo/Documents/GitHub/LABSO2021/cmake-build-debug
+# Folder: C:/Users/lenovo/Documents/GitHub/ClaudiaRaffaelli105368/cmake-build-debug
 
-build all: phony LABSO2021.exe
+build all: phony ClaudiaRaffaelli105368.exe
 
 # =============================================================================
 # Built-in targets

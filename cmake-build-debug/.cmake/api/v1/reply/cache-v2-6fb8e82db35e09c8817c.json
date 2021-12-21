@@ -55,7 +55,7 @@
 				}
 			],
 			"type" : "INTERNAL",
-			"value" : "c:/Users/lenovo/Documents/GitHub/LABSO2021/cmake-build-debug"
+			"value" : "c:/Users/lenovo/Documents/GitHub/ClaudiaRaffaelli105368/cmake-build-debug"
 		},
 		{
 			"name" : "CMAKE_CACHE_MAJOR_VERSION",
@@ -479,7 +479,7 @@
 				}
 			],
 			"type" : "INTERNAL",
-			"value" : "C:/Users/lenovo/Documents/GitHub/LABSO2021"
+			"value" : "C:/Users/lenovo/Documents/GitHub/ClaudiaRaffaelli105368"
 		},
 		{
 			"name" : "CMAKE_INSTALL_PREFIX",
@@ -491,7 +491,7 @@
 				}
 			],
 			"type" : "PATH",
-			"value" : "C:/Program Files (x86)/LABSO2021"
+			"value" : "C:/Program Files (x86)/ClaudiaRaffaelli105368"
 		},
 		{
 			"name" : "CMAKE_LINKER",
@@ -707,7 +707,7 @@
 				}
 			],
 			"type" : "STATIC",
-			"value" : "LABSO2021"
+			"value" : "ClaudiaRaffaelli105368"
 		},
 		{
 			"name" : "CMAKE_RANLIB",
@@ -1086,7 +1086,7 @@
 			"value" : "FALSE"
 		},
 		{
-			"name" : "LABSO2021_BINARY_DIR",
+			"name" : "ClaudiaRaffaelli105368_BINARY_DIR",
 			"properties" : 
 			[
 				{
@@ -1095,10 +1095,10 @@
 				}
 			],
 			"type" : "STATIC",
-			"value" : "C:/Users/lenovo/Documents/GitHub/LABSO2021/cmake-build-debug"
+			"value" : "C:/Users/lenovo/Documents/GitHub/ClaudiaRaffaelli105368/cmake-build-debug"
 		},
 		{
-			"name" : "LABSO2021_IS_TOP_LEVEL",
+			"name" : "ClaudiaRaffaelli105368_IS_TOP_LEVEL",
 			"properties" : 
 			[
 				{
@@ -1110,7 +1110,7 @@
 			"value" : "ON"
 		},
 		{
-			"name" : "LABSO2021_SOURCE_DIR",
+			"name" : "ClaudiaRaffaelli105368_SOURCE_DIR",
 			"properties" : 
 			[
 				{
@@ -1119,7 +1119,7 @@
 				}
 			],
 			"type" : "STATIC",
-			"value" : "C:/Users/lenovo/Documents/GitHub/LABSO2021"
+			"value" : "C:/Users/lenovo/Documents/GitHub/ClaudiaRaffaelli105368"
 		}
 	],
 	"kind" : "cache",

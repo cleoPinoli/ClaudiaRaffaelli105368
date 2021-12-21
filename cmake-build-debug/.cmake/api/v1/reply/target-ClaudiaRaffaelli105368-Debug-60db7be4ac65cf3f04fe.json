@@ -2,10 +2,10 @@
 	"artifacts" : 
 	[
 		{
-			"path" : "LABSO2021.exe"
+			"path" : "ClaudiaRaffaelli105368.exe"
 		},
 		{
-			"path" : "LABSO2021.pdb"
+			"path" : "ClaudiaRaffaelli105368.pdb"
 		}
 	],
 	"backtrace" : 1,
@@ -55,12 +55,11 @@
 			},
 			"sourceIndexes" : 
 			[
-				0,
-				1
+				0
 			]
 		}
 	],
-	"id" : "LABSO2021::@6890427a1f51a3e7e1df",
+	"id" : "ClaudiaRaffaelli105368::@6890427a1f51a3e7e1df",
 	"link" : 
 	{
 		"commandFragments" : 
@@ -80,8 +79,8 @@
 		],
 		"language" : "C"
 	},
-	"name" : "LABSO2021",
-	"nameOnDisk" : "LABSO2021.exe",
+	"name" : "ClaudiaRaffaelli105368",
+	"nameOnDisk" : "ClaudiaRaffaelli105368.exe",
 	"paths" : 
 	{
 		"build" : ".",
@@ -93,15 +92,7 @@
 			"name" : "Source Files",
 			"sourceIndexes" : 
 			[
-				0,
-				1
-			]
-		},
-		{
-			"name" : "Header Files",
-			"sourceIndexes" : 
-			[
-				2
+				0
 			]
 		}
 	],
@@ -112,17 +103,6 @@
 			"compileGroupIndex" : 0,
 			"path" : "main.c",
 			"sourceGroupIndex" : 0
-		},
-		{
-			"backtrace" : 1,
-			"compileGroupIndex" : 0,
-			"path" : "loncomsubs.c",
-			"sourceGroupIndex" : 0
-		},
-		{
-			"backtrace" : 1,
-			"path" : "loncomsubs.h",
-			"sourceGroupIndex" : 1
 		}
 	],
 	"type" : "EXECUTABLE"

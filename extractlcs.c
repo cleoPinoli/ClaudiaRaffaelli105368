@@ -1,3 +1,4 @@
+#include "extractlcs.h"
 #include <fcntl.h> /* file control options */
 #include <stdio.h>
 

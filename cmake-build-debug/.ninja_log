@@ -1,5 +1,4 @@
 # ninja log v5
-3	159	6617142501346362	CMakeFiles/LABSO2021.dir/main.c.obj	7c3c67238e880fcd
-21	147	6617142103295666	CMakeFiles/LABSO2021.dir/loncomsubs.c.obj	f375d6f3b268e32d
 162	350	6617142503220921	LABSO2021.exe	a289ae84cd10a567
-1	301	6617143904181440	build.ninja	afdde89d2ff182b6
+1	301	6617853436721278	build.ninja	afdde89d2ff182b6
+1	161	6617852103584974	CMakeFiles/ClaudiaRaffaelli105368.dir/main.c.obj	6ef8e6efa1bdfa6f

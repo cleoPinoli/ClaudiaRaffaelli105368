@@ -1,0 +1,1 @@
+/usr/bin/cc -g CMakeFiles/ClaudiaRaffaelli105368.dir/extractlcs.c.o CMakeFiles/ClaudiaRaffaelli105368.dir/main.c.o -o ../ClaudiaRaffaelli105368 

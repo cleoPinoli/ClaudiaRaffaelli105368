@@ -1,4 +1,4 @@
-/home/cleopinoli/Desktop/clion-2021.3/bin/cmake/linux/bin/cmake -DCMAKE_BUILD_TYPE=Debug -G "CodeBlocks - Unix Makefiles" /home/cleopinoli/Documents/GitHub/ClaudiaRaffaelli105368
+"C:\Program Files\JetBrains\CLion 2021.3.1\bin\cmake\win\bin\cmake.exe" -DCMAKE_BUILD_TYPE=Debug -G "CodeBlocks - MinGW Makefiles" C:\Users\cleos\Documents\GitHub\LABSO2021
 -- Configuring done
 -- Generating done
--- Build files have been written to: /home/cleopinoli/Documents/GitHub/ClaudiaRaffaelli105368/cmake-build-debug
+-- Build files have been written to: C:/Users/cleos/Documents/GitHub/LABSO2021/cmake-build-debug

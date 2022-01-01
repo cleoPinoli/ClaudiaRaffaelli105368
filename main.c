@@ -1,6 +1,5 @@
 #include <stdio.h>
 #include "extractlcs.h"
-#include <assert.h>
 #include <stdlib.h>
 /* stdlib contains declaration of malloc and free, will implement elsewhere */
 
@@ -10,6 +9,7 @@
 
 
 int main (int argc, char *argv[]) { /* TODO check of course if the type and # of parameters are correct */
+
     char *file_a = NULL;
     char *file_b = NULL;
     char *file_out = NULL;
@@ -28,9 +28,12 @@ int main (int argc, char *argv[]) { /* TODO check of course if the type and # of
     char* file1 = read_from_file(file_a); /* TODO read from terminal */
     char* file2 = read_from_file(file_b);
 
+    printf("\n %d ",compute_lcs(file1, file2));
+
+
     free(file1);
     free(file2); /* v important */
     write_to_file(file_out, "TEST");
-    printf("\nHello world!");
+
     return 0;
 }

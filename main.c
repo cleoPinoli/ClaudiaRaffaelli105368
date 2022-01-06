@@ -4,12 +4,6 @@
 #include <stdlib.h>
 #include <string.h>
 
-/* stdlib contains declaration of malloc and free */
-
-int check_params_syntax() {
-    return 0; //TODO fix this shoot
-}
-
 
 int main (int argc, char *argv[]) {
 
@@ -23,25 +17,22 @@ int main (int argc, char *argv[]) {
         exit(EXIT_FAILURE);
     }
 
-    if (check_params_syntax()!=0) {
-        printf("Invalid parameter(s). Please make sure all i/o files have .txt extension.");
-    }
         file_a = argv[1];
         file_b = argv[2];
         file_out = argv[3];
 
-
     char* file1 = read_from_file(file_a);
     char* file2 = read_from_file(file_b);
-    LCS_params lcs = compute_lcs(file1, file2);
-    printf("\nLCS computed: %s\n", lcs.lcs_output);
-    printf("\nLCS is: %d. Thank you for flying with Raffaelli Airlines. \n", lcs.lcs_size);
 
+    LCS_params* lcs = compute_lcs(file1, file2);
+    printf("\nLCS computed: %s\n", lcs->lcs_output);
+    printf("\nLCS length is: %d. Thank you for flying with Raffaelli Airlines. \n", lcs->lcs_size);
 
+    write_to_file(file_out, lcs->lcs_output);
+    free(lcs->lcs_output);
+    free(lcs);
     free(file1);
     free(file2); /* v important */
-    write_to_file(file_out, lcs.lcs_output);
-
     return 0;
 }
 

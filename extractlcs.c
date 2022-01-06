@@ -1,12 +1,9 @@
 #include "extractlcs.h"
-#include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
 
-#define BUFFER_SIZE 256  /* As the standard ASCII size (256) */
+#define ASCII_SET_SIZE 256
 #define MAX 50010
-
-
 
 
 /**
@@ -14,7 +11,7 @@
  * @param arr the given array.
  * @param end the 'limit' of the array or sub-array, being this a recursive solution.
  * @param X our certain value
- * @return the pointer to the element which is the lower bound
+ * @return the index of the element which is the lower bound
  */
 int get_lower_bound(int* arr, int end, int x) {
     for (int i = 0; i < end; i++) {
@@ -26,7 +23,7 @@ int get_lower_bound(int* arr, int end, int x) {
 }
 
 /**
- * Simple function that does what the math expression 'min(a, b)' does
+ * Simple function equivalent to 'min(a, b)'
  * @param a sequence a
  * @param b sequence b
  * @return the length of the shortest sequence of chars.
@@ -51,25 +48,23 @@ int get_lower_bound(int* arr, int end, int x) {
  * @param seq a sequence of characters
  * @return
  */
- int* populate_matrix (int** adj, int rows, char* seq) {
-    int* occurrences = malloc(rows*sizeof(int));
+ matrix_params* populate_matrix (int rows, char* seq) {
+
+    int **adj = malloc(ASCII_SET_SIZE * sizeof(int *));
+    int* occurrences = (int*)malloc(rows*sizeof(int));
+    matrix_params* mparams = malloc(sizeof(matrix_params));
+
+    mparams->adj = adj;
+    mparams->occurrences = occurrences;
+
     memset(occurrences, 0, rows*sizeof(int));
-    for (int i=0; i<rows; i++) {
-        //printf ("Value at index %d : %d ", i, occurrences[i]);
-    }
-    printf(" %d\n", occurrences[0]);
+
     for (int i=0; i < strlen(seq); i++) {
-                occurrences[seq[i]]++;
-    }
-    for (int i=0; i<rows; i++) {
-       // printf ("\nValue at index %d : %d ", i, occurrences[i]);
+        occurrences[seq[i]]++;
     }
 
     for (int n=0; n<rows; n++) {
         adj[n] = malloc(sizeof(int)*occurrences[n]);
-    }
-    for (int i=0;i< strlen(seq); i++) {
-       // printf("%d\t", adj[seq[i]][0]);
     }
 
     int* it_arrays = malloc(sizeof(int)*rows);
@@ -78,9 +73,9 @@ int get_lower_bound(int* arr, int end, int x) {
         adj[seq[j]][it_arrays[seq[j]]] = j;
         it_arrays[seq[j]]++;
     }
-    free(it_arrays);
 
-    return occurrences;
+    free(it_arrays);
+    return mparams;
  }
 
 /**
@@ -92,20 +87,19 @@ int get_lower_bound(int* arr, int end, int x) {
  * @return
  * */
 
-LCS_params compute_lcs (char *sequence_a, char *sequence_b) {
-    printf("Sequence B: %s", sequence_b);
-    int a_size = strlen(sequence_a); /* A/N I had a variable b_size declared here as strlen(sequence_b) but it was never used eventually */
+LCS_params* compute_lcs (char *sequence_a, char *sequence_b) {
 
-    int **adj = malloc(BUFFER_SIZE * sizeof(int *));             // uppercase ascii = 65~90
+    int a_size = strlen(sequence_a); /* A/N: I had a variable b_size declared here as strlen(sequence_b) but it was never used eventually */
 
-    /* this I believe to be ADJ as in ADJ-acency matrix */
-    int *occurrences = populate_matrix(adj, BUFFER_SIZE, sequence_b);
-
+    matrix_params* m_params = populate_matrix(ASCII_SET_SIZE, sequence_b);
+    int** adj = m_params->adj;
+    int* occurrences = m_params->occurrences;
     int i, j, lcs_size = 0;
     int ar[get_minsize(sequence_a, sequence_b)];
 
     ar[lcs_size++] = -1;
-    /* this is the infamous rev */
+
+    /* this is the infamous reverse matrix */
     for (i = 0; i < a_size; i++) {
         for (j = occurrences[sequence_a[i]] - 1; j >= 0; j--) {
             int x = adj[sequence_a[i]][j];
@@ -118,21 +112,15 @@ LCS_params compute_lcs (char *sequence_a, char *sequence_b) {
         }
     }
 
-    printf("The computed LCS is as follows: \n");
-
-    char output[lcs_size];
+    char* output = (char*)malloc(lcs_size*sizeof(char));
     for(i = 1 ; i < lcs_size; i++) {
-        printf(" %c ;", sequence_b[ar[i]]);
         output[i-1] = sequence_b[ar[i]];
     }
-
-
-    /*for(int y = 1 ; y < lcs_size; y++) {
-        output[y] = sequence_b[ar[y]];
-    } */
-    printf(" This is happening in lcs file: %s \n\n\n", output);
-    LCS_params result = {lcs_size-1, output};
+    LCS_params* result = malloc (sizeof(LCS_params));
+    result->lcs_size = lcs_size-1;
+    result->lcs_output = output;
+    free(m_params->adj);
+    free(m_params->occurrences);
+    free(m_params);
     return result;
 }
-
-

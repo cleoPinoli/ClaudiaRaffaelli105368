@@ -8,9 +8,9 @@ set(CMAKE_DEPENDS_LANGUAGES
 
 # The set of dependency files which are needed:
 set(CMAKE_DEPENDS_DEPENDENCY_FILES
-  "/home/cleopinoli/Documents/GitHub/ClaudiaRaffaelli105368/extractlcs.c" "CMakeFiles/extractlcs.dir/extractlcs.c.o" "gcc" "CMakeFiles/extractlcs.dir/extractlcs.c.o.d"
-  "/home/cleopinoli/Documents/GitHub/ClaudiaRaffaelli105368/io_mgmt.c" "CMakeFiles/extractlcs.dir/io_mgmt.c.o" "gcc" "CMakeFiles/extractlcs.dir/io_mgmt.c.o.d"
-  "/home/cleopinoli/Documents/GitHub/ClaudiaRaffaelli105368/main.c" "CMakeFiles/extractlcs.dir/main.c.o" "gcc" "CMakeFiles/extractlcs.dir/main.c.o.d"
+  "C:/Users/cleos/Documents/GitHub/ClaudiaRaffaelli105368/extractlcs.c" "CMakeFiles/extractlcs.dir/extractlcs.c.obj" "gcc" "CMakeFiles/extractlcs.dir/extractlcs.c.obj.d"
+  "C:/Users/cleos/Documents/GitHub/ClaudiaRaffaelli105368/io_mgmt.c" "CMakeFiles/extractlcs.dir/io_mgmt.c.obj" "gcc" "CMakeFiles/extractlcs.dir/io_mgmt.c.obj.d"
+  "C:/Users/cleos/Documents/GitHub/ClaudiaRaffaelli105368/main.c" "CMakeFiles/extractlcs.dir/main.c.obj" "gcc" "CMakeFiles/extractlcs.dir/main.c.obj.d"
   )
 
 # Targets to which this target links.

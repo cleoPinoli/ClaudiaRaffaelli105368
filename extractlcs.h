@@ -5,9 +5,15 @@ typedef struct {
     char* lcs_output;
 } LCS_params;
 
-LCS_params compute_lcs();
+typedef struct {
+    int** adj;
+    int* occurrences;
+} matrix_params;
+
+
+LCS_params* compute_lcs();
 
 
 
 
-#endif //LABSO2021_EXTRACTLCS_H
+#endif

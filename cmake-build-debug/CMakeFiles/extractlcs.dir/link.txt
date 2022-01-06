@@ -1,1 +1,3 @@
-/usr/bin/cc -g CMakeFiles/extractlcs.dir/extractlcs.c.o CMakeFiles/extractlcs.dir/main.c.o CMakeFiles/extractlcs.dir/io_mgmt.c.o -o ../extractlcs 
+"C:\Program Files\JetBrains\CLion 2021.3.1\bin\cmake\win\bin\cmake.exe" -E rm -f CMakeFiles\extractlcs.dir/objects.a
+C:\MinGW\bin\ar.exe qc CMakeFiles\extractlcs.dir/objects.a @CMakeFiles\extractlcs.dir\objects1.rsp
+C:\MinGW\bin\gcc.exe -g -Wl,--whole-archive CMakeFiles\extractlcs.dir/objects.a -Wl,--no-whole-archive -o ..\extractlcs.exe -Wl,--out-implib,libextractlcs.dll.a -Wl,--major-image-version,0,--minor-image-version,0 @CMakeFiles\extractlcs.dir\linklibs.rsp

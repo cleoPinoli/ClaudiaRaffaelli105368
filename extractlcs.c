@@ -1,61 +1,11 @@
 #include "extractlcs.h"
-#include <fcntl.h> /* file control options */
 #include <stdio.h>
-#include <unistd.h> /* for testing purposes */
 #include <stdlib.h>
 #include <string.h>
-#include <assert.h>
 
-#define BUFFER_SIZE 256  //does this need to be adjusted?
-#define MAX 50010 //honestly though what is this??
+#define BUFFER_SIZE 256  /* As the standard ASCII size (256) */
+#define MAX 50010
 
-int get_size (int fd) {
-    lseek(fd, 0L, SEEK_END);
-    int sz = lseek (fd, 0, SEEK_CUR);
-    lseek(fd, 0L, SEEK_SET);
-    //printf("\nFilesize = %d", sz);
-    return sz;
-}
-
-void write_to_file (char* fn, char* content) {
-    int fd;
-    fd = creat(fn, 0664);
-    if (fd == 1) { /*why 1? */
-        perror("Error: ");
-    } else {
-        ssize_t nr;
-        nr = write(fd, content, strlen(content));
-        if (nr == -1) { perror("Error: "); }
-        else {
-            //printf("\nWritten successfully");}
-        }
-        close(fd); /* I think this goes here*/
-    }
-}
-
-/**
- * Reads
- * yeah it does read
- * @param path
- * @return
- */
-char* read_from_file (char *path) {
-    int my_fd = 0;
-    my_fd = open(path, O_RDONLY); /* being a syscall, open has a different default path than fopen */
-    if (my_fd < 0) {
-        perror(path);
-        exit(1); /* check this */
-    } else {
-        //printf("File has been opened! Great news, innit?\n");
-        int size = get_size(my_fd);
-        char* buf = malloc((size+1)*sizeof(char)); /* TODO needs a free()*/
-        read(my_fd, buf, size);
-        //printf("\nReading happened successfully");
-        buf[size] = '\0';
-        printf("%s", buf);
-        return buf;
-    }
-}
 
 
 
@@ -75,9 +25,6 @@ int get_lower_bound(int* arr, int end, int x) {
     return end;
 }
 
-int get_array_length(){return 0;} /* maybe it needs implementation, maybe it doesn't */
-
-
 /**
  * Simple function that does what the math expression 'min(a, b)' does
  * @param a sequence a
@@ -85,7 +32,7 @@ int get_array_length(){return 0;} /* maybe it needs implementation, maybe it doe
  * @return the length of the shortest sequence of chars.
  */
  int get_minsize (char *a, char *b) {
-     int sizea = strlen(a); //TODO do this elsewhere lol
+     int sizea = strlen(a);
      int sizeb = strlen(b);
 
      if (sizea < sizeb) {
@@ -101,12 +48,11 @@ int get_array_length(){return 0;} /* maybe it needs implementation, maybe it doe
  *
  * @param rows = size_b. The number of rows the matrix is going to have.
  * Note: it's not going to be necessarily fully populated (better yet, it most likely won't!).
- * //TODO update
  * @param seq a sequence of characters
  * @return
  */
- int* populate_matrix (int** adj, int rows, char* seq) {          //lowercase ascii = 97~122
-    int* occurrences = malloc(rows*sizeof(int)); //check initialization
+ int* populate_matrix (int** adj, int rows, char* seq) {
+    int* occurrences = malloc(rows*sizeof(int));
     memset(occurrences, 0, rows*sizeof(int));
     for (int i=0; i<rows; i++) {
         //printf ("Value at index %d : %d ", i, occurrences[i]);
@@ -139,22 +85,21 @@ int get_array_length(){return 0;} /* maybe it needs implementation, maybe it doe
 
 /**
  * computes the LCS using the Hunt-Szymanski algorithm.
- * NOTES: len(sequence_a) > len(sequence_b). TODO perhaps its the contrary?
- *
+ * TODO add notation and look like a smartass lol
  * @param sequence_a the sequence A to compare.
  * @param sequence_b the sequence B to compare.
  *
- * @return lcs_size the size of the LCS
+ * @return
  * */
 
-int compute_lcs (char *sequence_a, char *sequence_b){ //where len(b) < len(a) (? apparently it's irrelevant)
+LCS_params compute_lcs (char *sequence_a, char *sequence_b) {
     printf("Sequence B: %s", sequence_b);
-    int a_size = strlen(sequence_a), b_size = strlen(sequence_b);
+    int a_size = strlen(sequence_a); /* A/N I had a variable b_size declared here as strlen(sequence_b) but it was never used eventually */
 
-    int** adj = malloc(BUFFER_SIZE*sizeof(int*));             // uppercase ascii = 65~90
+    int **adj = malloc(BUFFER_SIZE * sizeof(int *));             // uppercase ascii = 65~90
 
     /* this I believe to be ADJ as in ADJ-acency matrix */
-    int* occurrences = populate_matrix(adj, BUFFER_SIZE, sequence_b);
+    int *occurrences = populate_matrix(adj, BUFFER_SIZE, sequence_b);
 
     int i, j, lcs_size = 0;
     int ar[get_minsize(sequence_a, sequence_b)];
@@ -167,29 +112,27 @@ int compute_lcs (char *sequence_a, char *sequence_b){ //where len(b) < len(a) (?
 
             if (x > ar[lcs_size - 1]) {
                 ar[lcs_size++] = x;
-            }
-            else {      /*TODO review pointer arithmetics */
+            } else {
                 ar[get_lower_bound(ar, lcs_size, x)] = x;
             }
         }
     }
-/*    for(i = 0; i < BUFFER_SIZE; i++){
-        assert(sizeof(adj[0])!=0);
-        int arrlength = sizeof(adj[i])/sizeof(adj[0]);
 
-        for (j=0; j < arrlength; j++)
-        {
-            printf("row %d, col %d: %d ", i, j, adj[i][j]);
-        }
-        printf("\n");
-    }*/
-/*    *//* this is useless lol *//*
-    for (i = 1 ; i < lcs_size; i++) {
-        printf("%c ", sequence_b[ar[i]]);
-    }*/
+    printf("The computed LCS is as follows: \n");
 
+    char output[lcs_size];
     for(i = 1 ; i < lcs_size; i++) {
-        printf(" > %c :", sequence_b[ar[i]]);
+        printf(" %c ;", sequence_b[ar[i]]);
+        output[i-1] = sequence_b[ar[i]];
     }
-    return lcs_size - 1;
+
+
+    /*for(int y = 1 ; y < lcs_size; y++) {
+        output[y] = sequence_b[ar[y]];
+    } */
+    printf(" This is happening in lcs file: %s \n\n\n", output);
+    LCS_params result = {lcs_size-1, output};
+    return result;
 }
+
+

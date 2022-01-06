@@ -1,14 +1,12 @@
 file(REMOVE_RECURSE
-  "../extractlcs.exe"
-  "../extractlcs.exe.manifest"
+  "../extractlcs"
   "../extractlcs.pdb"
-  "CMakeFiles/extractlcs.dir/extractlcs.c.obj"
-  "CMakeFiles/extractlcs.dir/extractlcs.c.obj.d"
-  "CMakeFiles/extractlcs.dir/main.c.obj"
-  "CMakeFiles/extractlcs.dir/main.c.obj.d"
-  "CMakeFiles/extractlcs.dir/mylist.c.obj"
-  "CMakeFiles/extractlcs.dir/mylist.c.obj.d"
-  "libextractlcs.dll.a"
+  "CMakeFiles/extractlcs.dir/extractlcs.c.o"
+  "CMakeFiles/extractlcs.dir/extractlcs.c.o.d"
+  "CMakeFiles/extractlcs.dir/io_mgmt.c.o"
+  "CMakeFiles/extractlcs.dir/io_mgmt.c.o.d"
+  "CMakeFiles/extractlcs.dir/main.c.o"
+  "CMakeFiles/extractlcs.dir/main.c.o.d"
 )
 
 # Per-language clean rules from dependency scanning.

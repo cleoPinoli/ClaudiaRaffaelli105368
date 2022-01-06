@@ -53,7 +53,8 @@
 			"sourceIndexes" : 
 			[
 				0,
-				2
+				2,
+				3
 			]
 		}
 	],
@@ -87,14 +88,16 @@
 			"sourceIndexes" : 
 			[
 				0,
-				2
+				2,
+				3
 			]
 		},
 		{
 			"name" : "Header Files",
 			"sourceIndexes" : 
 			[
-				1
+				1,
+				4
 			]
 		}
 	],
@@ -116,6 +119,17 @@
 			"compileGroupIndex" : 0,
 			"path" : "main.c",
 			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "io_mgmt.c",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "io_mgmt.h",
+			"sourceGroupIndex" : 1
 		}
 	],
 	"type" : "EXECUTABLE"

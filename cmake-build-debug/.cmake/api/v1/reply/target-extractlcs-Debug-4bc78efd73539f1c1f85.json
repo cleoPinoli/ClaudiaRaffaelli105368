@@ -2,10 +2,7 @@
 	"artifacts" : 
 	[
 		{
-			"path" : "C:/Users/cleos/Documents/GitHub/ClaudiaRaffaelli105368/extractlcs.exe"
-		},
-		{
-			"path" : "C:/Users/cleos/Documents/GitHub/ClaudiaRaffaelli105368/extractlcs.pdb"
+			"path" : "/home/cleopinoli/Documents/GitHub/ClaudiaRaffaelli105368/extractlcs"
 		}
 	],
 	"backtrace" : 1,
@@ -73,16 +70,12 @@
 			{
 				"fragment" : "",
 				"role" : "flags"
-			},
-			{
-				"fragment" : "-lkernel32 -luser32 -lgdi32 -lwinspool -lshell32 -lole32 -loleaut32 -luuid -lcomdlg32 -ladvapi32",
-				"role" : "libraries"
 			}
 		],
 		"language" : "C"
 	},
 	"name" : "extractlcs",
-	"nameOnDisk" : "extractlcs.exe",
+	"nameOnDisk" : "extractlcs",
 	"paths" : 
 	{
 		"build" : ".",

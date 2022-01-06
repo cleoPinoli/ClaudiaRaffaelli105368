@@ -7,7 +7,7 @@
 
 
 /**
- * returns the first element of a given array whose value is lower than a certain value.
+ * Returns the first element of a given array whose value is lower than a certain value.
  * @param arr the given array.
  * @param end the 'limit' of the array or sub-array, being this a recursive solution.
  * @param X our certain value
@@ -40,13 +40,17 @@ int get_lower_bound(int* arr, int end, int x) {
  }
 
 /**
- * TODO describe the choice of using such matrix instead of other ds's
- * Contemplating the worst case scenario, this matrix has size rows, which is the size of sequence_b.
+ * Populates the adjacency matrix for the LCS.
+ * Note that this matrix is designed similarly to a Python dictionary, a set of sets;
+ * each of the nested sets 'n' will contain the position of all the character_n's in a string (hence occurrences).
+ * E.g.: the input string 'mama' will result in index 'a' (=97 if I remember correctly) = {1,3} and 'm' = {0,2}.
+ * Each of the nested sets is pre-allocated by finding the relative occurrences first then using their sizes to
+ * establish how big they must be.
+ * This should save us a lot of time and, much more relevantly, space.
  *
- * @param rows = size_b. The number of rows the matrix is going to have.
- * Note: it's not going to be necessarily fully populated (better yet, it most likely won't!).
+ * @param rows The number of rows the matrix is going to have.
  * @param seq a sequence of characters
- * @return
+ * @return mparams a set of adjacency_matrix + the occurrences
  */
  matrix_params* populate_matrix (int rows, char* seq) {
 
@@ -79,12 +83,15 @@ int get_lower_bound(int* arr, int end, int x) {
  }
 
 /**
- * computes the LCS using the Hunt-Szymanski algorithm.
- * TODO add notation and look like a smartass lol
+ * Computes the LCS using the Hunt-Szymanski algorithm.
+ * As cited in the Wikipedia page, the H-S algorithm should run in O((n+k)log(n)) where
+ * n is the length of the biggest string and k the number of matches between the two.
+ * This instead of O(n x m).
+ * Understanding the theory behind the Hunt-Szymanski a. was the true trial by fire.
  * @param sequence_a the sequence A to compare.
  * @param sequence_b the sequence B to compare.
  *
- * @return
+ * @return the result of the computation (string + its size)
  * */
 
 LCS_params* compute_lcs (char *sequence_a, char *sequence_b) {

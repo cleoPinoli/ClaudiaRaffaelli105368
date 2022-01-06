@@ -25,7 +25,7 @@ int main (int argc, char *argv[]) {
     char* file2 = read_from_file(file_b);
 
     LCS_params* lcs = compute_lcs(file1, file2);
-    printf("\nLCS computed: %s\n", lcs->lcs_output);
+    printf("\nLCS computed.\n");
     printf("\nLCS length is: %d. Thank you for flying with Raffaelli Airlines. \n", lcs->lcs_size);
 
     write_to_file(file_out, lcs->lcs_output);
